@@ -1,0 +1,37 @@
+---
+spring:
+  config:
+    activate:
+      on-profile: "websocket"
+  graphql:
+    websocket:
+      path: "/graphql"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "rsocket"
+  graphql:
+    rsocket:
+      mapping: "graphql"
+  rsocket:
+    server:
+      mapping-path: "/graphql"
+      transport: "websocket"
+
+---
+spring:
+  config:
+    activate:
+      on-profile: "combined"
+  graphql:
+    websocket:
+      path: "/graphql"
+    rsocket:
+      mapping: "graphql"
+  rsocket:
+    server:
+      mapping-path: "/graphql"
+      transport: "websocket"
+
