@@ -11,7 +11,7 @@ spring:
 spring:
   config:
     activate:
-      on-profile: "rsocket"
+      on-profile: "rsocketws"
   graphql:
     rsocket:
       mapping: "graphql"
@@ -24,14 +24,11 @@ spring:
 spring:
   config:
     activate:
-      on-profile: "combined"
+      on-profile: "rsockettcp"
   graphql:
-    websocket:
-      path: "/graphql"
     rsocket:
       mapping: "graphql"
   rsocket:
     server:
-      mapping-path: "/graphql"
-      transport: "websocket"
+      port: 9191
 
